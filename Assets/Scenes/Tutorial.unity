@@ -201,6 +201,15 @@ Prefab:
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 1622582492}
+    - target: {fileID: 4783062822838820, guid: ba7632cb92b10294e9d453d5acb56c11, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 108713885548178582, guid: ba7632cb92b10294e9d453d5acb56c11,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba7632cb92b10294e9d453d5acb56c11, type: 2}
   m_IsPrefabParent: 0
@@ -731,7 +740,7 @@ Prefab:
     - target: {fileID: 224157552580573254, guid: 44e7c263152cff240aa619f954e7a57e,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 152.73737
+      value: 131.04051
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44e7c263152cff240aa619f954e7a57e, type: 2}
@@ -3470,6 +3479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  numOfCrystal: 0
   hpBar: {fileID: 943439716}
 --- !u!1001 &1996761435
 Prefab:
