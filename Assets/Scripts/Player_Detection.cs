@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_Detection : MonoBehaviour {
 	private GameObject target;
-	private Rigidbody rigidbody;
+	private Rigidbody rb;
 	public Vector3 velocity;
 	public bool isSeeking;
 	public float moveSpeed;
@@ -15,14 +15,14 @@ public class Player_Detection : MonoBehaviour {
 	public float distanceToSeek = 10;
 
 	void Awake() {
-		rigidbody = GetComponent<Rigidbody>();
-		velocity = rigidbody.velocity;
+		rb = GetComponent<Rigidbody>();
+		velocity = rb.velocity;
 	}
 
 
 	void FixedUpdate() {
 		if(isSeeking) {
-			bool isSlowed = false;
+			// bool isSlowed = false;
 			if(target != null) {
 				if(Vector3.Distance(target.transform.position, this.transform.position) < distanceToSeek) {
 					Vector3 pos = target.transform.position - this.transform.position;
