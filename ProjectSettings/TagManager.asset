@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Crystal
   - PlayerInteract
+  - Enemy
+  - EnemyRange
   layers:
   - Default
   - TransparentFX

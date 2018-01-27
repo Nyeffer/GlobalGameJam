@@ -14,7 +14,6 @@ public class GatherCrystal : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col) {
-		Debug.Log("Got it");
 		if(col.gameObject.tag == "Crystal") {
 			numOfCrystal++;
 			Destroy(col.gameObject);
