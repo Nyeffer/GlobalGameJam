@@ -8,6 +8,7 @@ TagManager:
   - PlayerInteract
   - Enemy
   - EnemyRange
+  - Generator
   layers:
   - Default
   - TransparentFX

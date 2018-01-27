@@ -8,6 +8,12 @@ public class GatherCrystal : MonoBehaviour {
 	public Text text_Crystal;
 
 	private int numOfCrystal = 0;
+
+	public Text text_Generator;
+
+	void Start() {
+
+	}
 	
 	void Update() {
 		text_Crystal.text = GetNumOfCrystal().ToString();
@@ -18,10 +24,17 @@ public class GatherCrystal : MonoBehaviour {
 			numOfCrystal++;
 			Destroy(col.gameObject);
 		}
+
+		if(col.gameObject.tag == "Generator") {
+			// col.GetComponent<>();
+		}
 	}
 
 	public int GetNumOfCrystal() {
 		return numOfCrystal;
 	}
 
+	public void TakeCrystals(int Crystals) {
+		numOfCrystal -= Crystals;
+	}
 }
