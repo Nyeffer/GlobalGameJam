@@ -47,7 +47,6 @@ public class GeneratorActivate : MonoBehaviour {
 	}
 
 	public void TakeCrystal() {
-		Debug.Log("Pressed");
 		if (requiredAmtOfCrystal <= Player.GetComponent<GatherCrystal>().GetNumOfCrystal()) {
 			Player.GetComponent<GatherCrystal>().TakeCrystals(requiredAmtOfCrystal);
 			rend.material = ActiveState;
