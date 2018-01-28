@@ -13,8 +13,13 @@ public class GeneratorActivate : MonoBehaviour {
 	public Button ActivateGenerator;
 	private GameObject Player;
 
+	public GameObject EnemySpawners;
+
+	public GameObject Crystals;
+
 	public Material ActiveState;
 	public Material DeactiveState;
+	public MeshFilter ActivatedGen;
 
 	private Renderer rend;
 
@@ -23,6 +28,8 @@ public class GeneratorActivate : MonoBehaviour {
 		ButtonPanel.SetActive(false);
 		rend = gameObject.GetComponent<Renderer>();
 		rend.material = DeactiveState;
+		Crystals.SetActive(false);
+		EnemySpawners.SetActive(true);
 	}
 
 	void OnTriggerEnter(Collider col) {
@@ -34,6 +41,10 @@ public class GeneratorActivate : MonoBehaviour {
 				howManyCrystalLeft.text = "You Need " + (requiredAmtOfCrystal - numOfCrystals).ToString() + " More Crystals";
 			} else {
 				ButtonPanel.SetActive(true);
+				MeshFilter mesh = GetComponent<MeshFilter>();
+				mesh = ActivatedGen;
+				Crystals.SetActive(true);
+				EnemySpawners.SetActive(false);
 			}			
 		}
 	}
