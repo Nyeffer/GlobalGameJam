@@ -23,7 +23,6 @@ public class Move : MonoBehaviour
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
         var z = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
         var rot = Input.GetAxis("Turn") * Time.deltaTime * rotSpeed;
-        Debug.Log(rot);
         if(Input.GetKey(KeyCode.LeftShift)) {
             if(Stamina > 0) {
                 isSprinting = true;

@@ -12,7 +12,7 @@ public class GatherCrystal : MonoBehaviour {
 	public Text text_Generator;
 
 	void Start() {
-
+		numOfCrystal = PlayerPrefs.GetInt("numOfCrystals");
 	}
 	
 	void Update() {

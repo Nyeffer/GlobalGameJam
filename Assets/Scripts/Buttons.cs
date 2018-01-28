@@ -23,12 +23,13 @@ public class Buttons : MonoBehaviour {
 	}
 
 	public void OnContinue() {
-		if (posX != 0 && posY != 0 && posZ != 0 && NumOfCrystals != 0 && nameOfScene != null) {
+		if (nameOfScene != null) {
 			SceneManager.LoadScene(nameOfScene, LoadSceneMode.Single);
 		} 
 	}
 
 	public void OnStart() {
+		PlayerPrefs.SetInt("numOfCrystals", 0);
 		SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
 	}
 

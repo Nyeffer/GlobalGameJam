@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour {
 
 	void Update() {
 		if(curHealth <= 0) {
-			Destroy(gameObject);
+			gameObject.GetComponentInParent<Player_Detection>().selfDestroy();
 		}
 	}
 

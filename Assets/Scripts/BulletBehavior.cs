@@ -17,7 +17,7 @@ public class BulletBehavior : MonoBehaviour {
         velocity = velocity + this.transform.forward * moveSpeed;
         rigidbody.velocity = velocity;
         Destroy(gameObject, timeTillDestroy);
-        gameObject.transform.Rotate(0, 0, 150 * Time.deltaTime);
+        gameObject.transform.Rotate(0, 0, 300 * Time.deltaTime);
     }
 
     public int GetDamage() {

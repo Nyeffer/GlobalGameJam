@@ -47,4 +47,8 @@ public class Player_Detection : MonoBehaviour {
 			isSeeking = true;	
 		}
 	}
+
+	public void selfDestroy() {
+		gameObject.GetComponent<SelfDestroy>().enabled = true;
+	}
 }
