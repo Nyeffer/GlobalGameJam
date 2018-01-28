@@ -36,4 +36,8 @@ public class Buttons : MonoBehaviour {
 	public void Quit() {
 		Application.Quit();
 	}
+
+	public void OnReturn() {
+		SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+	}
 }

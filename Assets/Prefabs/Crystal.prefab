@@ -53,6 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4366842211073108}
   - component: {fileID: 135879193971447598}
+  - component: {fileID: 114658356557919210}
   m_Layer: 0
   m_Name: Crystal
   m_TagString: Crystal
@@ -178,6 +179,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114658356557919210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961494036585914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc21d4aebe49da45821ecee8bc905a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotSpeed: 150
 --- !u!135 &135879193971447598
 SphereCollider:
   m_ObjectHideFlags: 1
