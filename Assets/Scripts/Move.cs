@@ -20,10 +20,11 @@ public class Move : MonoBehaviour
         isSprinting = false;
     }
     void Update()	{
-        var x = Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed;
+        var x = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
         var z = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
-
-        if(Input.GetKey(KeyCode.Q)) {
+        var rot = Input.GetAxis("Turn") * Time.deltaTime * rotSpeed;
+        Debug.Log(rot);
+        if(Input.GetKey(KeyCode.LeftShift)) {
             if(Stamina > 0) {
                 isSprinting = true;
                 z = Input.GetAxis("Vertical") * Time.deltaTime * (moveSpeed + sprintSpeed);
@@ -34,9 +35,10 @@ public class Move : MonoBehaviour
         }
         if (!isSprinting && Stamina < 10) {
             Stamina += Time.deltaTime * 0.5f;
-        } 
+        }
         staminaBar.value = Stamina;
-        transform.Rotate(0, x, 0);
+        transform.Rotate(0, rot, 0);
+        transform.Translate(x, 0, 0);
         transform.Translate(0, 0, z);
     }
 }

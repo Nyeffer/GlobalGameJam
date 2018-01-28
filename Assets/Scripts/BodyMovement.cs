@@ -24,10 +24,11 @@ public class BodyMovement : MonoBehaviour {
 				l_Arm.transform.Translate(0, 0, -Input.GetAxis("Vertical") * Time.deltaTime * (direction * 0.25f));
 				r_Leg.transform.Translate(0, 0, -Input.GetAxis("Vertical") * Time.deltaTime *(direction * 0.25f));
 				l_Leg.transform.Translate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime * (direction * 0.25f));
-			} else if (Input.GetAxis("Vertical") < 0) {
+			}  
+			if (Input.GetAxis("Vertical") < 0) {
 				r_Arm.transform.Translate(0, 0, -Input.GetAxis("Vertical") * Time.deltaTime * (direction * 0.25f));
 				l_Arm.transform.Translate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime * (direction * 0.25f));
-				r_Leg.transform.Translate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime *(direction * 0.25f));
+				r_Leg.transform.Translate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime * (direction * 0.25f));
 				l_Leg.transform.Translate(0, 0, -Input.GetAxis("Vertical") * Time.deltaTime * (direction * 0.25f));
 			}
 		} else {

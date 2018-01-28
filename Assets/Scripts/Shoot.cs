@@ -16,7 +16,7 @@ public class Shoot : MonoBehaviour {
 	}
 
 	void Update() {
-		if(Input.GetKey(KeyCode.E)) {
+		if(Input.GetKey(KeyCode.Space)) {
 			if(lastFired > 1/fireRate) {
 				Instantiate(bullet, nuzzle.transform.position, nuzzle.transform.rotation);
 				lastFired = 0.0f;
