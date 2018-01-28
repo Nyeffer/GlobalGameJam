@@ -10,6 +10,7 @@ TagManager:
   - EnemyRange
   - Generator
   - PlayerBullet
+  - Tower
   layers:
   - Default
   - TransparentFX

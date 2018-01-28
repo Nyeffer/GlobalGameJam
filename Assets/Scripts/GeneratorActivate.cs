@@ -12,24 +12,21 @@ public class GeneratorActivate : MonoBehaviour {
 	public Text howManyCrystalLeft;
 	public Button ActivateGenerator;
 	private GameObject Player;
-
 	public GameObject EnemySpawners;
-
 	public GameObject Crystals;
-
-	public Material ActiveState;
-	public Material DeactiveState;
+	// public Material ActiveState;
+	// public Material DeactiveState;
 	public MeshFilter ActivatedGen;
-
 	private Renderer rend;
+	private bool isActive;
 
 	void Awake() {
 		TextPanel.SetActive(false);
 		ButtonPanel.SetActive(false);
 		rend = gameObject.GetComponent<Renderer>();
-		rend.material = DeactiveState;
 		Crystals.SetActive(false);
 		EnemySpawners.SetActive(true);
+		isActive = false;
 	}
 
 	void OnTriggerEnter(Collider col) {
@@ -41,8 +38,6 @@ public class GeneratorActivate : MonoBehaviour {
 				howManyCrystalLeft.text = "You Need " + (requiredAmtOfCrystal - numOfCrystals).ToString() + " More Crystals";
 			} else {
 				ButtonPanel.SetActive(true);
-				MeshFilter mesh = GetComponent<MeshFilter>();
-				mesh = ActivatedGen;
 				Crystals.SetActive(true);
 				EnemySpawners.SetActive(false);
 			}			
@@ -60,8 +55,13 @@ public class GeneratorActivate : MonoBehaviour {
 	public void TakeCrystal() {
 		if (requiredAmtOfCrystal <= Player.GetComponent<GatherCrystal>().GetNumOfCrystal()) {
 			Player.GetComponent<GatherCrystal>().TakeCrystals(requiredAmtOfCrystal);
-			rend.material = ActiveState;
+			MeshFilter mesh = GetComponent<MeshFilter>();
+			mesh = ActivatedGen;
+			isActive = true;
 		}
 	} 
 	
+	public bool GetState() {
+		return isActive;
+	}
 }

@@ -7,7 +7,8 @@ public class Tutorial_Done : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col) {
 		if(col.gameObject.tag == "Player") {
-			SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
+			SceneManager.LoadScene("R1_L1", LoadSceneMode.Single);
+			col.GetComponent<PlayerHealth>().Save();
 		}
 	}
 }

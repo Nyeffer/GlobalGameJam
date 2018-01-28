@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour {
 	public Slider hpBar;
 
 	void Start() {
+		numOfCrystal = PlayerPrefs.GetInt("numOfCrystals", 0);
 		curHealth = maxHealth;
 		hpBar.maxValue = maxHealth;
 		nameOfScene = SceneManager.GetActiveScene().ToString();
@@ -25,6 +26,7 @@ public class PlayerHealth : MonoBehaviour {
 		hpBar.value = curHealth;
 		if(curHealth <= 0) {
 			Save();
+			SceneManager.LoadScene("GameOver", LoadSceneMode.Single)
 		}
 	}
 
@@ -51,9 +53,6 @@ public class PlayerHealth : MonoBehaviour {
 	public void Save() {
 		numOfCrystal = GetComponentInChildren<GatherCrystal>().GetNumOfCrystal();
 		PlayerPrefs.SetInt("numOfCrystals", numOfCrystal);
-		PlayerPrefs.SetFloat("posX", gameObject.transform.position.x);
-		PlayerPrefs.SetFloat("posY", gameObject.transform.position.y);
-		PlayerPrefs.SetFloat("posZ", gameObject.transform.position.z);
 		PlayerPrefs.SetString("nameOfScene", nameOfScene);
 	}
 
