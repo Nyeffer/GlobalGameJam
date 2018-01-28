@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
 
 	public int maxHealth;
-	private int curHealth;
+	private float curHealth;
 
 	public int numOfCrystal;
 
@@ -28,12 +28,24 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
-	public int GetHealth() {
+	public float GetHealth() {
 		return curHealth;
 	}
 
 	public void SetHealth(int health) {
 		curHealth = health;
+	}
+
+	public void DealDamage(int Damage) {
+		curHealth -= Damage;
+	}
+
+	public void DamageOverTime() {
+		curHealth -= Time.deltaTime;
+	}
+
+	public void DamageOverTime(int multiplier) {
+		curHealth -= Time.deltaTime * multiplier;
 	}
 
 	public void Save() {

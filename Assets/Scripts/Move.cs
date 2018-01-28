@@ -24,14 +24,16 @@ public class Move : MonoBehaviour
         var z = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
 
         if(Input.GetKey(KeyCode.Q)) {
-            isSprinting = true;
-            z = Input.GetAxis("Vertical") * Time.deltaTime * (moveSpeed + sprintSpeed);
-            Stamina -= Time.deltaTime;
+            if(Stamina > 0) {
+                isSprinting = true;
+                z = Input.GetAxis("Vertical") * Time.deltaTime * (moveSpeed + sprintSpeed);
+                Stamina -= Time.deltaTime;
+            }
         } else {
             isSprinting = false;
         }
         if (!isSprinting && Stamina < 10) {
-            Stamina += Time.deltaTime * 1.25f;
+            Stamina += Time.deltaTime * 0.5f;
         } 
         staminaBar.value = Stamina;
         transform.Rotate(0, x, 0);

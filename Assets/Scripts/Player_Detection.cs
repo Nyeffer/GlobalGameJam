@@ -27,10 +27,13 @@ public class Player_Detection : MonoBehaviour {
 				if(Vector3.Distance(target.transform.position, this.transform.position) < distanceToSeek) {
 					Vector3 pos = target.transform.position - this.transform.position;
 					this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(pos), 0.1f);
+					
 
 					if(pos.magnitude > 3) {
 						this.transform.Translate(0, 0, moveSpeed * Time.deltaTime);
+						target.GetComponent<PlayerHealth>().DamageOverTime();
 					} else {
+						target.GetComponent<PlayerHealth>().DamageOverTime(3);
 						this.transform.Translate(0, 0, moveSpeed * 0.25f * Time.deltaTime);
 					}
 				}

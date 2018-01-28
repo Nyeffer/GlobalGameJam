@@ -48,7 +48,7 @@ public class GeneratorActivate : MonoBehaviour {
 			}			
 		}
 	}
-
+ 
 	void OnTriggerExit(Collider col) {
 		Player = null;
 		if(col.gameObject.tag == "PlayerInteract") {

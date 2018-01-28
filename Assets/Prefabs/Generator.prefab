@@ -417,6 +417,7 @@ MonoBehaviour:
   ButtonPanel: {fileID: 1534195972144080}
   howManyCrystalLeft: {fileID: 114620912414698020}
   ActivateGenerator: {fileID: 114152460517784778}
+  EnemySpawners: {fileID: 0}
   Crystals: {fileID: 1064569632401392}
   ActiveState: {fileID: 2100000, guid: 8524502d31f32d843906920f8385888d, type: 2}
   DeactiveState: {fileID: 2100000, guid: 064ebdd9073af3040acff442cb4bbcd5, type: 2}
